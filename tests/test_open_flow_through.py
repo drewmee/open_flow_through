@@ -11,8 +11,8 @@ def test_preconditioner():
     usb_port = "COM5"
     preconditioner_fsm = OpenFlowThrough(usb_port)
     assert preconditioner_fsm.state == "idle"
-    preconditioner_fsm.safe()
-    assert preconditioner_fsm.state == "safety"
+    preconditioner_fsm.safety()
+    assert preconditioner_fsm.state == "idle"
 
     preconditioner_fsm.load_blank(flush_delay=2, fill_delay=1)
     assert preconditioner_fsm.state == "blank"
@@ -32,5 +32,5 @@ def test_preconditioner():
     print("Conducting sample measurement for %d seconds" % measurement_duration)
     time.sleep(measurement_duration)
 
-    preconditioner_fsm.safe()
-    assert preconditioner_fsm.state == "safety"
+    preconditioner_fsm.safety()
+    assert preconditioner_fsm.state == "idle"

@@ -2,6 +2,12 @@
     "name": "preconditioner_fsm",
     "states": [
         {
+            "name": "idle",
+            "on_enter": [
+                "safety_routine"
+            ]
+        },
+        {
             "name": "blank",
             "on_enter": [
                 "load_blank_routine"
@@ -14,30 +20,21 @@
             ]
         },
         {
-            "name": "safety",
-            "on_enter": [
-                "safety_routine"
-            ]
-        },
-        {
             "name": "measurement",
             "on_enter": [
                 "measurement_routine"
             ]
-        },
-        {
-            "name": "idle"
         }
     ],
     "transitions": [
         {
-            "trigger": "safe",
+            "trigger": "safety",
             "source": "idle",
-            "dest": "safety"
+            "dest": "idle"
         },
         {
             "trigger": "load_blank",
-            "source": "safety",
+            "source": "idle",
             "dest": "blank"
         },
         {
@@ -46,19 +43,19 @@
             "dest": "measurement"
         },
         {
-            "trigger": "safe",
+            "trigger": "safety",
             "source": "blank",
-            "dest": "safety"
+            "dest": "idle"
         },
         {
             "trigger": "load_sample",
-            "source": "safety",
+            "source": "idle",
             "dest": "sample"
         },
         {
-            "trigger": "safe",
+            "trigger": "safety",
             "source": "sample",
-            "dest": "safety"
+            "dest": "idle"
         },
         {
             "trigger": "conduct_measurement",
@@ -66,9 +63,9 @@
             "dest": "measurement"
         },
         {
-            "trigger": "safe",
+            "trigger": "safety",
             "source": "measurement",
-            "dest": "safety"
+            "dest": "idle"
         },
         {
             "trigger": "load_blank",
