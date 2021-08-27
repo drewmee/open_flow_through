@@ -29,7 +29,7 @@ Dependencies for Local Development
 
 If you wish to build the local documentation or run unit tests, there are a few additional dependencies. Those can be installed by:
 
-pip install -e ".[docs, tests]"
+pip install -e ".[docs, tests, develop]"
 
 License
 -------
