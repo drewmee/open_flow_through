@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use open-flow-through in a project::
+To use openflowthrough in a project::
 
-    import open_flow_through
+    import openflowthrough

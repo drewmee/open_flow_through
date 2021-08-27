@@ -1,1 +1,1 @@
-"""Unit test package for open_flow_through."""
+"""Unit test package for openflowthrough."""

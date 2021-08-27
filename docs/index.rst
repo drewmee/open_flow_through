@@ -1,4 +1,4 @@
-Welcome to open-flow-through's documentation!
+Welcome to openflowthrough's documentation!
 ======================================
 
 .. toctree::

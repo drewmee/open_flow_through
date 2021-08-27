@@ -1,29 +1,37 @@
 =================
-open-flow-through
+openflowthrough
 =================
 
 
-.. image:: https://img.shields.io/pypi/v/open_flow_through.svg
-        :target: https://pypi.python.org/pypi/open_flow_through
+.. image:: https://img.shields.io/pypi/v/openflowthrough.svg
+        :target: https://pypi.python.org/pypi/openflowthrough
 
-.. image:: https://img.shields.io/travis/drewmee/open_flow_through.svg
-        :target: https://travis-ci.com/drewmee/open_flow_through
-
-.. image:: https://readthedocs.org/projects/open-flow-through/badge/?version=latest
-        :target: https://open-flow-through.readthedocs.io/en/latest/?version=latest
+.. image:: https://readthedocs.org/projects/openflowthrough/badge/?version=latest
+        :target: https://openflowthrough.readthedocs.io/en/latest/?version=latest
         :alt: Documentation Status
-
-
-
 
 Software for controlling the Open Flow-through sampling device.
 
+Installation
+------------
 
-* Free software: MIT license
-* Documentation: https://open-flow-through.readthedocs.io.
+Install via pip:
 
+$ pip install open [--upgrade]
 
-Features
---------
+Documentation
+-------------
 
-* TODO
+Full documentation can be found here.
+
+Dependencies for Local Development
+----------------------------------
+
+If you wish to build the local documentation or run unit tests, there are a few additional dependencies. Those can be installed by:
+
+pip install -e ".[docs, tests]"
+
+License
+-------
+
+This library is licensed under the MIT license. The full text of the license can be found in this repository at LICENSE.txt.

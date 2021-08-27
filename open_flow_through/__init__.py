@@ -1,7 +1,7 @@
-"""Top-level package for open-flow-through."""
+"""Top-level package for openflowthrough."""
 
 __author__ = """Drew Meyers"""
 __email__ = "drewm@mit.edu"
 __version__ = "0.1.0"
 
-from .open_flow_through import OpenFlowThrough
+from .openflowthrough import OpenFlowThrough

@@ -8,13 +8,13 @@ Installation
 Stable release
 --------------
 
-To install open-flow-through, run this command in your terminal:
+To install openflowthrough, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install open_flow_through
+    $ pip install openflowthrough
 
-This is the preferred method to install open-flow-through, as it will always install the most recent stable release.
+This is the preferred method to install openflowthrough, as it will always install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -26,19 +26,19 @@ you through the process.
 From sources
 ------------
 
-The sources for open-flow-through can be downloaded from the `Github repo`_.
+The sources for openflowthrough can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/drewmee/open_flow_through
+    $ git clone git://github.com/drewmee/openflowthrough
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl -OJL https://github.com/drewmee/open_flow_through/tarball/master
+    $ curl -OJL https://github.com/drewmee/openflowthrough/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/drewmee/open_flow_through
-.. _tarball: https://github.com/drewmee/open_flow_through/tarball/master
+.. _Github repo: https://github.com/drewmee/openflowthrough
+.. _tarball: https://github.com/drewmee/openflowthrough/tarball/master

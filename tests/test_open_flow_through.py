@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
-"""Tests for `open_flow_through` package."""
+"""Tests for `openflowthrough` package."""
 
 import time
 
-from open_flow_through import OpenFlowThrough
+from openflowthrough import OpenFlowThrough
 
 
 def test_preconditioner():
