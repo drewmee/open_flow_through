@@ -17,7 +17,7 @@ Installation
 
 Install via pip:
 
-$ pip install open [--upgrade]
+$ pip install openflowthrough [--upgrade]
 
 Documentation
 -------------
