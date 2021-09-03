@@ -11,10 +11,10 @@ log = logging.getLogger(__name__)
 
 class OpenFlowThrough:
     def __init__(self, usb_port="/dev/arduino_nano"):
-        """[summary]
+        """The finite state machine (FSM) object which controls the Open Flow Through device.
 
         Args:
-            usb_port (str, optional): [description]. Defaults to "/dev/arduino_nano".
+            usb_port (str, optional): The USB port which the device is connected to. Defaults to "/dev/arduino_nano".
         """
         self.duration = 10
         self.board = ArduinoNano(usb_port)
@@ -32,15 +32,15 @@ class OpenFlowThrough:
         self.machine = Machine(model=self, send_event=True, **fsm_config)
 
     def load_flowcell_routine(self, measurement_type, flush_delay, fill_delay):
-        """[summary]
+        """Routine to load the flowcell of the connected sensor with either a blank or sample.
 
         Args:
-            measurement_type ([type]): [description]
-            flush_delay ([type]): [description]
-            fill_delay ([type]): [description]
+            measurement_type (str): blank (through filter) or sample (bypass filter).
+            flush_delay (int): Amount of time (seconds) to wait while flushing the connected sensor.
+            fill_delay (int): Amount of time (seconds) to wait while fill the connected sensor.
 
         Raises:
-            ValueError: [description]
+            ValueError: measurement_type must be either "blank" or "filter"
         """
         print("loading %s" % measurement_type)
 
@@ -66,6 +66,11 @@ class OpenFlowThrough:
         self.board.digital[self.pin_dict["diverter_valve_2"]].write(0)
 
     def load_blank_routine(self, event):
+        """[summary]
+
+        Args:
+            event ([type]): [description]
+        """
         flush_delay = event.kwargs.get("flush_delay", 20)
         fill_delay = event.kwargs.get("fill_delay", 10)
         self.load_flowcell_routine(
@@ -73,7 +78,11 @@ class OpenFlowThrough:
         )
 
     def load_sample_routine(self, event):
-        """[summary]"""
+        """[summary]
+
+        Args:
+            event ([type]): [description]
+        """
         flush_delay = event.kwargs.get("flush_delay", 10)
         fill_delay = event.kwargs.get("fill_delay", 10)
         self.load_flowcell_routine(
@@ -81,7 +90,11 @@ class OpenFlowThrough:
         )
 
     def measurement_routine(self, event):
-        """[summary]"""
+        """[summary]
+
+        Args:
+            event ([type]): [description]
+        """
         self.board.digital[self.pin_dict["pump"]].write(0)
 
         # Route flow around filter
@@ -92,7 +105,11 @@ class OpenFlowThrough:
         self.board.digital[self.pin_dict["on_off_valve"]].write(1)
 
     def safety_routine(self, event):
-        """[summary]"""
+        """[summary]
+
+        Args:
+            event ([type]): [description]
+        """
         self.board.digital[self.pin_dict["pump"]].write(0)
 
         # Route flow around filter
