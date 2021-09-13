@@ -2,7 +2,7 @@
 
 from setuptools import find_packages, setup
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 with open("README.rst") as readme_file:
     readme = readme_file.read()
@@ -48,6 +48,7 @@ setup(
         "tests": ["pytest>=3"],
     },
     test_suite="tests",
+    package_data={"openflowthrough": ["json/fsm.json"]},
     include_package_data=True,
     zip_safe=False,
 )
